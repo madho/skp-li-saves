@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/skp_li_saves/__init__.py
+src/skp_li_saves/__main__.py
+src/skp_li_saves/clean.py
+src/skp_li_saves/cli.py
+src/skp_li_saves/normalize.py
+src/skp_li_saves/schema.py
+src/skp_li_saves.egg-info/PKG-INFO
+src/skp_li_saves.egg-info/SOURCES.txt
+src/skp_li_saves.egg-info/dependency_links.txt
+src/skp_li_saves.egg-info/entry_points.txt
+src/skp_li_saves.egg-info/top_level.txt
+tests/test_clean.py
+tests/test_cli.py

@@ -1,0 +1,2 @@
+[console_scripts]
+skp-li-saves = skp_li_saves.cli:main

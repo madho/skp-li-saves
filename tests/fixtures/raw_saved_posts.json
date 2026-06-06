@@ -1,0 +1,21 @@
+[
+  {
+    "post_id": "urn:li:activity:1",
+    "post_url": "https://www.linkedin.com/feed/update/urn:li:activity:1/",
+    "author_name": "Ada Lovelace",
+    "author_role": "Founder",
+    "published_at": "2026-06-01T12:00:00Z",
+    "text": "Hello world from LinkedIn\nLike\nComment\nShare\n",
+    "summary": "",
+    "theme_primary": "",
+    "theme_secondary": ""
+  },
+  {
+    "id": "urn:li:activity:2",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:2/",
+    "author": "Grace Hopper",
+    "headline": "Researcher",
+    "date": "2026-06-02T08:30:00Z",
+    "content": "Second post… see more\nView all comments"
+  }
+]
