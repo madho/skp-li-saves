@@ -1,8 +1,15 @@
-# LinkedIn Saved Posts capture helper
+# LinkedIn Saved Posts capture options
 
-This repo now includes a browser-console helper for extracting saved posts from the LinkedIn saved-posts page.
+This repo now supports two capture paths:
 
-## How it works
+1. a **browser-console helper** for ad hoc extraction from a logged-in tab
+2. a **Playwright-based capture command** that uses a persistent browser profile and writes JSON to disk
+
+## 1) Browser-console helper
+
+This is the lightweight, browser-local option.
+
+### How it works
 
 1. Open LinkedIn while logged in.
 2. Navigate to the saved-posts page.
@@ -20,9 +27,38 @@ The helper will:
 - collect post URNs from `data-chameleon-result-urn`
 - download a JSON file named `linkedin_saved_posts.json`
 
-## Output shape
+## 2) Playwright persistent-profile capture
 
-The downloaded file is an array of objects:
+This is the more automated path.
+
+### Install prerequisites
+
+```bash
+pip install -e .
+playwright install chromium
+```
+
+If you want to reuse a real Chrome login, point `--profile-dir` at a dedicated persistent profile directory and launch with `--browser-channel chrome`.
+
+### Run it
+
+```bash
+skp-li-saves-capture \
+  --url https://www.linkedin.com/my-items/saved-posts/ \
+  --profile-dir ~/.cache/skp-li-saves/playwright-profile \
+  --output linkedin_saved_posts.json
+```
+
+Useful flags:
+
+- `--headless` runs the browser hidden
+- `--max-scrolls` caps how long the scraper keeps scrolling
+- `--settle-ms` and `--click-wait-ms` control timing for slow LinkedIn renders
+- `--html path/to/snapshot.html` parses a saved HTML snapshot instead of opening a browser
+
+### Output shape
+
+The capture command writes an array of raw records shaped like this:
 
 ```json
 [
@@ -42,6 +78,6 @@ skp-li-saves linkedin_saved_posts.json --format xlsx --enrich
 
 ## Notes
 
-- The helper is intentionally browser-local. It does not require LinkedIn API access.
-- It uses the visible page DOM, so if LinkedIn changes the markup, the helper may need a refresh.
-- The repository's normalization, enrichment, HTML export, and XLSX export layers are designed to consume this JSON output.
+- The helper and the Playwright command are intentionally browser-local. They do not require LinkedIn API access.
+- They use the visible page DOM, so if LinkedIn changes the markup, the capture logic may need a refresh.
+- The repository's normalization, enrichment, HTML export, and XLSX export layers are designed to consume the JSON output from either capture path.

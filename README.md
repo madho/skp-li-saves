@@ -40,4 +40,5 @@ See [`docs/gsd-plan.md`](docs/gsd-plan.md).
 - The pipeline should remain local-first and user-session-driven.
 - Public repo contents should avoid secrets, cookies, or private export data.
 - Pass `--enrich` to apply deterministic theme classification and lightweight summary generation before JSONL, HTML, or XLSX export.
-- See [`docs/capture.md`](docs/capture.md) for the browser-console capture helper.
+- Use `skp-li-saves-capture` or `python -m skp_li_saves.capture_playwright` for a persistent Playwright-based browser capture path.
+- See [`docs/capture.md`](docs/capture.md) for the browser-console helper and Playwright runbook.
