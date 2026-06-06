@@ -39,3 +39,4 @@ See [`docs/gsd-plan.md`](docs/gsd-plan.md).
 - No LinkedIn API is assumed.
 - The pipeline should remain local-first and user-session-driven.
 - Public repo contents should avoid secrets, cookies, or private export data.
+- Pass `--enrich` to apply deterministic theme classification and lightweight summary generation before JSONL, HTML, or XLSX export.
