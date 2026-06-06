@@ -7,6 +7,9 @@ node_modules/
 dist/
 .cache/
 .venv/
+__pycache__/
+*.pyc
+*.egg-info/
 *.log
 .DS_Store
 .env
