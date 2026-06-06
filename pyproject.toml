@@ -9,6 +9,7 @@ description = "Normalize LinkedIn saved-post exports into canonical JSONL"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Hermes Agent" }]
+dependencies = ["openpyxl>=3.1"]
 
 [project.scripts]
 skp-li-saves = "skp_li_saves.cli:main"
