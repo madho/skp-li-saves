@@ -1,0 +1,13 @@
+# Local artifacts
+
+# Do not commit private exports, browser profiles, cookies, or captured raw LinkedIn data.
+# Add code/build outputs here if needed, but keep public repo history clean.
+node_modules/
+.dist/
+dist/
+.cache/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
